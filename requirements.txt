@@ -1,0 +1,7 @@
+06.25 18:11
+requirements.txt
+Flask==2.3.2
+pandas
+scikit-learn
+numpy
+gunicorn
