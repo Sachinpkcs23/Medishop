@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicines | Medishop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Available Medicines</h1>
+        <div class="grid">
+            {% for med in medicines %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + med.image) }}" alt="{{ med.name }}" width="100">
+                    <h2>{{ med.name }}</h2>
+                    <p>Category: {{ med.category }}</p>
+                    <p>Price: ₹{{ med.price }}</p>
+                    <a class="btn" href="/medicine/{{ med.id }}">Details</a>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="btn" href="/">Back to Home</a>
+    </div>
+</body>
+</html>

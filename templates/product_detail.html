@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ medicine.name }} | Medishop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ medicine.name }}</h1>
+        <img src="{{ url_for('static', filename='images/' + medicine.image) }}" alt="{{ medicine.name }}" width="200">
+        <p><strong>Category:</strong> {{ medicine.category }}</p>
+        <p><strong>Price:</strong> ₹{{ medicine.price }}</p>
+        <p><strong>Stock:</strong> {{ medicine.stock }}</p>
+        <p><strong>Expiry:</strong> {{ medicine.expiry_date }}</p>
+        <p><strong>Prescription Required:</strong> {{ 'Yes' if medicine.prescription_required else 'No' }}</p>
+        <a class="btn" href="/medicines">Back to List</a>
+    </div>
+</body>
+</html>
